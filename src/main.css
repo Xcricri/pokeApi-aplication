@@ -1,4 +1,6 @@
+/* Responsive css */
 @import url('./mainLayout.css');
+
 
 
 /* Global style */
@@ -7,10 +9,21 @@ body,html{
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
-    background-color: #37353E;
+    background-color: var(--Primary-bg-color);
     font-family: 'Poppins', sans-serif;
 }
 
+/* Variable css */
+:root{
+    --Primary-bg-color:#e5eff8;
+    --secondary-bg-color:#44444E;
+    --primary-text-color:#1b1818;
+    --card-and-button-bg-color:#f0f8fb;
+    --secondary-text-color:#D3DAD9;
+    --drop-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Font */
 @font-face {
     font-family: Poppins;
     src: url(./assets/font/Poppins-Regular.ttf);
@@ -23,9 +36,8 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 100px;
-    margin: 0;
-    margin-bottom: 100px;
+    padding: 0px 100px;
+    margin: 100px 0px;
 }
 
 /* Logo Container */
@@ -50,13 +62,13 @@ header{
 }
 
 .hamburger-menu{
-    background-color: #44444E;
+    background-color: var(--card-and-button-bg-color);
     padding: 10px 15px;
     border-radius: 50%;
     font-size: 20px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    color: #D3DAD9;
+    color: var(--primary-text-color);
 }
 
 
@@ -80,15 +92,13 @@ input[type="text"] {
     border: none;
     border-radius: 50px;
     font-size: 16px;
-    background-color: #44444E;
+    background-color: var(--card-and-button-bg-color);
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
     outline: none;
-    color: #D3DAD9;
 }
 
-
 input::placeholder{
-    color: #D3DAD9;
+    color: var(--primary-text-color);
 }
 
 /* Pokemon container */
@@ -100,7 +110,7 @@ input::placeholder{
 }
 
 .pokemon-card{
-    background-color: #44444E;
+    background-color: var(--card-and-button-bg-color);
     text-align: center;
     padding: 20px;
     border-radius: 10px;
@@ -117,33 +127,31 @@ input::placeholder{
 
 .pokemon-card a{
     text-decoration: none;
-    color: #D3DAD9;
+    color: var(--primary-text-color);
 }
 
 /* Pokemon result */
-
 .result {
     display: none;
     margin-top: 15px;
     padding: 10px;
-    background-color: #44444E;
-    color: #D3DAD9;
+    background-color: var(--card-and-button-bg-color);
+    color: var(--primary-text-color);
     border-radius: 10px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
     display: none;
+    height: auto;
 }
 
 .result a {
     text-decoration: none;
-    color: #D3DAD9;
-    margin-top: 10px;
+    color: var(--primary-text-color);
 }
 
 .result img {
     width: 160px; 
     text-align: center;
-    aspect-ratio: 1/1;
 }
 
 .result div{

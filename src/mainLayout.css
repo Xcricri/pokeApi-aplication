@@ -1,5 +1,18 @@
-/* Desktop layout */
+/* Responsive layout */
 
-@media only screen and (max-width: 992px) {
+
+
+/* Desktop layout */
+@media only screen and (max-width: 1024px) {
+
+}
+
+/* Tablet layout */
+@media screen and (max-width:768px){
+
+}
+
+/* Mobile layout */
+@media screen and (max-width:480px) {
     
 }
