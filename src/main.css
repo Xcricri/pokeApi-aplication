@@ -19,6 +19,7 @@ body,html{
     --secondary-bg-color:#44444E;
     --primary-text-color:#1b1818;
     --card-and-button-bg-color:#f0f8fb;
+    --hover-card-button:black;
     --secondary-text-color:#D3DAD9;
     --drop-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
@@ -119,13 +120,15 @@ input::placeholder{
 
 .pokemon-card:hover{
     transform: translateY(-5px);
+    text-decoration: underline;
+    color: var(--hover-card-button);
 }
 
 .pokemon-card img{
     width: 80%;
 }
 
-.pokemon-card a{
+.pokemon-card{
     text-decoration: none;
     color: var(--primary-text-color);
 }

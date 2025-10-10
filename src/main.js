@@ -1,9 +1,7 @@
 // Script//
 
-
-
 // Mengambil id
-const PokemonContainer = document.getElementById('pokemon-container');
+const pokemonContainer = document.getElementById('pokemon-container');
 
 // Fungsi untuk mengambil data pokemon
 async function getPokemon(id) {
@@ -13,7 +11,7 @@ async function getPokemon(id) {
             throw new Error(`${response.status} ${response.statusText}`);
         }
         const data = await response.json();
-        // console.log(data) untuk melihat data di console
+        // console.log(data) 
 
         return {//Mengemballikan data yang dibutuhkan
             name: data.name,
@@ -25,32 +23,53 @@ async function getPokemon(id) {
 }    
 
 
-// Fungsi menampilkan data pokemon
-setTimeout(() => {//Untuk merender data
 
+// Fungsi menampilkan data pokemon
+document.addEventListener('DOMContentLoaded',() => {//Untuk merender data
     async function displayPokemon(){
-        for (let i = 1; i<= 50; i++){//Looping 100 card pokemon
+        for (let i = 1; i<= 200; i++){//Looping 100 card pokemon
             try{
                 const pokemon = await getPokemon(i);
-                const card = document.createElement('div');
-                const link = document.createElement('a');
+                const card = document.createElement('a');
                 card.className = 'pokemon-card';//Menambahkan class pada card
-        
+                card.href = `./pages/pokemonStats.html?id=${i}`
                 card.innerHTML = `
                     <img src= "${pokemon.image}" alt="${pokemon.name}">
-                    <a href="#">${pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1)}</a>
+                    <p>${pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1)}</p>
                 `;    
-                PokemonContainer.appendChild(card);//Menambahkan card pada container
+                pokemonContainer.appendChild(card);//Menambahkan card pada container
 
             }catch (error){// Mengecek error
                 const errorMessage = document.createElement('p');
-                errorMessage.innerText = `${error}`;
-                PokemonContainer.appendChild(errorMessage); //Menampilkan error pada container
+                errorMessage.innerHTML = `${error}`;
             }    
         }    
     }    
     displayPokemon();// Memanggil fungsi display pokemon
-},1500)    
+})    
+
+
+
+
+// Fungsi untuk mengambil data pokemon
+async function getPokemon(id) {
+    try {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);//Mengambil data dari api
+        if (!response.ok){
+            throw new Error(`${response.status} ${response.statusText}`);
+        }
+        const data = await response.json();
+        // console.log(data) 
+        
+        return {//Mengemballikan data yang dibutuhkan
+            name: data.name,
+            image: data.sprites.front_default,
+        };
+    } catch (error){
+        console.log(error);
+    }    
+}  
+
 
 
 // Logika untuk mencari pokemon
@@ -77,7 +96,7 @@ searchInput.addEventListener('input', async () => {
                     <div>
                         <h2>${responsePokemon.name.charAt(0).toUpperCase() + responsePokemon.name.slice(1)}</h2>
                         <img src= "${responsePokemon.image}" alt="${responsePokemon.name}">
-                        <a href ='#'>Lihat detail pokemon</a>
+                        <a href ='./pages/pokemonStats.html?id=${query}'>Lihat detail pokemon</a>
                     </div>
                     `;
                 
@@ -92,5 +111,4 @@ searchInput.addEventListener('input', async () => {
         resultDiv.style.display = 'block'; //Jika ada data pokemon akan menampilkan result
     }
 });
-
 
