@@ -30,12 +30,12 @@ document.addEventListener('DOMContentLoaded',() => {//Untuk merender data
         for (let i = 1; i<= 200; i++){//Looping 100 card pokemon
             try{
                 const pokemon = await getPokemon(i);
-                const card = document.createElement('a');
+                const card = document.createElement('div');
                 card.className = 'pokemon-card';//Menambahkan class pada card
                 card.href = `./pages/pokemonStats.html?id=${i}`
                 card.innerHTML = `
                     <img src= "${pokemon.image}" alt="${pokemon.name}">
-                    <p>${pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1)}</p>
+                    <a href="./pages/pokemonStats.html?id=${i}">${pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1)}</a>
                 `;    
                 pokemonContainer.appendChild(card);//Menambahkan card pada container
 

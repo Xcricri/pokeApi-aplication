@@ -118,10 +118,19 @@ input::placeholder{
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
-.pokemon-card:hover{
-    transform: translateY(-5px);
+.pokemon-card a{
+    text-decoration: none;
+    color: var(--primary-text-color);
+}
+
+.pokemon-card a:hover{
     text-decoration: underline;
     color: var(--hover-card-button);
+    cursor: pointer;
+}
+
+.pokemon-card:hover{
+    transform: translateY(-5px);
 }
 
 .pokemon-card img{
