@@ -10,8 +10,7 @@ async function getPokemon(id) {
         if (!response.ok){
             throw new Error(`${response.status} ${response.statusText}`);
         }
-        const data = await response.json();
-        // console.log(data) 
+        const data = await response.json()
 
         return {//Mengemballikan data yang dibutuhkan
             name: data.name,
@@ -22,12 +21,10 @@ async function getPokemon(id) {
     }    
 }    
 
-
-
 // Fungsi menampilkan data pokemon
 document.addEventListener('DOMContentLoaded',() => {//Untuk merender data
     async function displayPokemon(){
-        for (let i = 1; i<= 200; i++){//Looping 100 card pokemon
+        for (let i = 1; i<= 150; i++){//Looping 100 card pokemon
             try{
                 const pokemon = await getPokemon(i);
                 const card = document.createElement('div');
