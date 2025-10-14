@@ -49,28 +49,6 @@ document.addEventListener('DOMContentLoaded',() => {//Untuk merender data
 
 
 
-
-// Fungsi untuk mengambil data pokemon
-async function getPokemon(id) {
-    try {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);//Mengambil data dari api
-        if (!response.ok){
-            throw new Error(`${response.status} ${response.statusText}`);
-        }
-        const data = await response.json();
-        // console.log(data) 
-        
-        return {//Mengemballikan data yang dibutuhkan
-            name: data.name,
-            image: data.sprites.front_default,
-        };
-    } catch (error){
-        console.log(error);
-    }    
-}  
-
-
-
 // Logika untuk mencari pokemon
 const searchInput = document.getElementById('Search-input')
 const resultDiv = document.getElementById('result');
@@ -79,12 +57,12 @@ searchInput.addEventListener('input', async () => {
     const query = searchInput.value.trim();//Mengosongkan spasi di awal dan akhir input
         
     //Mengosongkan nilai input
-    resultDiv.innerHTML = ''.charAt(0)+''.slice(1);
+    resultDiv.innerHTML = '';
     resultDiv.style.display = 'none';
 
     if (!query) {//Jika input kosong akan mengosongkan result
-        resultDiv.innerHTML = ``;
-        resultDiv.style.display = `none`;
+        resultDiv.innerHTML = '';
+        resultDiv.style.display = 'none';
         return;
     } else {
         try {
@@ -100,11 +78,11 @@ searchInput.addEventListener('input', async () => {
                     `;
                 
             } else{
-                resultDiv.innerHTML = `<p>Pokemon tidak ditemukan</p>`;
+                resultDiv.innerHTML = `<p>Masukan nama pokemon secara lengkap</p>`;
             }
     
         } catch (error) {
-            resultDiv.innerHTML = `<p>Pokemon tidak ditemukan</p>`;
+            resultDiv.innerHTML = `<p>Pokemon tidak ditemukan ${error}</p>`;
             console.log(error);
         }
         resultDiv.style.display = 'block'; //Jika ada data pokemon akan menampilkan result
