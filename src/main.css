@@ -17,7 +17,7 @@ body,html{
 :root{
     --Primary-bg-color:#e5eff8;
     --secondary-bg-color:#44444E;
-    --primary-text-color:#1b1818;
+    --primary-text-color:#5e5959;
     --card-and-button-bg-color:#f0f8fb;
     --hover-card-button:black;
     --secondary-text-color:#D3DAD9;
@@ -116,32 +116,19 @@ input::placeholder{
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-}
-
-.pokemon-card a{
-    text-decoration: none;
     color: var(--primary-text-color);
-}
-
-.pokemon-card a:hover{
-    text-decoration: underline;
-    color: var(--hover-card-button);
-    cursor: pointer;
+    text-decoration: none;
 }
 
 .pokemon-card:hover{
     transform: translateY(-5px);
+    color: var(--hover-card-button);
 }
 
 .pokemon-card img{
     width: 80%;
     filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.2));
     image-rendering: pixelated;
-}
-
-.pokemon-card{
-    text-decoration: none;
-    color: var(--primary-text-color);
 }
 
 /* Pokemon result */

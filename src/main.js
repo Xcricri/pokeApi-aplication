@@ -11,6 +11,7 @@ async function getPokemon(id) {
             throw new Error(`${response.status} ${response.statusText}`);
         }
         const data = await response.json()
+        console.log(data)
 
         return {//Mengemballikan data yang dibutuhkan
             name: data.name,
@@ -27,12 +28,13 @@ document.addEventListener('DOMContentLoaded',() => {//Untuk merender data
         for (let i = 1; i<= 150; i++){//Looping 100 card pokemon
             try{
                 const pokemon = await getPokemon(i);
-                const card = document.createElement('div');
+                const card = document.createElement('a');
+                card.href = './pages/pokemonStats.html?id=' + i;
                 card.className = 'pokemon-card';//Menambahkan class pada card
                 card.href = `./pages/pokemonStats.html?id=${i}`
                 card.innerHTML = `
                     <img src= "${pokemon.image}" alt="${pokemon.name}">
-                    <a href="./pages/pokemonStats.html?id=${i}">${pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1)}</a>
+                    <p>${pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1)}</p>
                 `;    
                 pokemonContainer.appendChild(card);//Menambahkan card pada container
 
