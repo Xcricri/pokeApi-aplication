@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded',() => {//Untuk merender data stats
                 <img src= "${pokemon.image}" alt="${pokemon.name}">
                 <p>Type: ${pokemon.type}</p>
                 <p>Ability: ${pokemon.ability}</p>
-                <a href="../main.html">Kembali ke halaman utama</a>
+                <a href="../index.html">Kembali ke halaman utama</a>
             `;
             pokemonStats.appendChild(cardStats);
 
