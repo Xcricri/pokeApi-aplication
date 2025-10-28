@@ -11,7 +11,7 @@ async function getPokemon(id) {
             throw new Error(`${response.status} ${response.statusText}`);
         }
         const data = await response.json()
-        console.log(data)
+        // console.log(data)
 
         return {//Mengemballikan data yang dibutuhkan
             name: data.name,
