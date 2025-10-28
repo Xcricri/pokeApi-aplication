@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded',() => {//Untuk merender data stats
                         data: [pokemon.hp, pokemon.attack, pokemon.speed, pokemon.special_attack, pokemon.special_defense],
                         backgroundColor: 'rgba(54, 162, 235, 0.5)',
                         borderColor: 'rgba(54, 162, 235, 1)',
-                        borderWidth: 1
+                        borderWidth: 1,
                     }]
                 },
                 options: {

@@ -7,7 +7,7 @@ const pokemonContainer = document.getElementById('pokemon-container');
 async function getPokemon(id) {
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);//Mengambil data dari api
-        if (!response.ok){
+        if (!response.ok) {
             throw new Error(`${response.status} ${response.statusText}`);
         }
         const data = await response.json()
@@ -17,9 +17,9 @@ async function getPokemon(id) {
             name: data.name,
             image: data.sprites.front_default,
         };
-    } catch (error){
+    } catch (error) {
         console.log(error);
-    }    
+    }
 }    
 
 // Fungsi menampilkan data pokemon
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded',() => {//Untuk merender data
             try{
                 const pokemon = await getPokemon(i);
                 const card = document.createElement('a');
-                card.href = './pages/pokemonStats.html?id=' + i;
+                card.href = './pages/pokemonStats.lhtml?id=' + i;
                 card.className = 'pokemon-card';//Menambahkan class pada card
                 card.href = `./pages/pokemonStats.html?id=${i}`
                 card.innerHTML = `
@@ -78,7 +78,7 @@ searchInput.addEventListener('input', async () => {
                     `;
                 
             } else{
-                resultDiv.innerHTML = `<p>Masukan nama pokemon secara lengkap</p>`;
+                resultDiv.innerHTML = `<p>Pokemon tidak ditemukan</p>`;
             }
     
         } catch (error) {
