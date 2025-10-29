@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded',() => {//Untuk merender data
             try{
                 const pokemon = await getPokemon(i);
                 const card = document.createElement('a');
-                card.href = './pages/pokemonStats.lhtml?id=' + i;
                 card.className = 'pokemon-card';//Menambahkan class pada card
                 card.href = `./pages/pokemonStats.html?id=${i}`
                 card.innerHTML = `
