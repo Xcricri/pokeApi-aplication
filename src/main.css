@@ -9,7 +9,7 @@ body,html{
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
-    background-color: var(--Primary-bg-color);
+    background-color: var(--Primary-bg-color) !important;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -62,16 +62,42 @@ header{
     align-items: center;
 }
 
-.hamburger-menu{
-    background-color: var(--card-and-button-bg-color);
-    padding: 10px 15px;
-    border-radius: 50%;
-    font-size: 20px;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+.btn-primary{
+    background-color: var(--card-and-button-bg-color) !important;
+    color: var(--primary-text-color);
+    border: none;
+    font-size: 24px;
     cursor: pointer;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover{
+    color: var(--primary-text-color) !important;
+}
+
+.offcanvas-header{
+    background-color: var(--Primary-bg-color) ;
     color: var(--primary-text-color);
 }
 
+.offcanvas-body{
+    background-color: var(--Primary-bg-color)!important;
+    color: var(--primary-text-color);
+}
+
+.offcanvas-body ul{
+    list-style: none;
+    padding: 0;
+}
+
+.offcanvas-body a{
+    color: var(--primary-text-color);
+    text-decoration: none;
+}
+
+.offcanvas-body a:hover{
+    color: var(--secondary-bg-color);
+}
 
 /* Content */
 

@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <!-- Css -->
     <link rel="stylesheet" href="../css/pokemonStats.css">
     <link rel="icon" href="../../public/icon/pngwing.com.png" type="imag/x-icon">
-    <!-- Boostrap icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
     <!-- Chart -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Pokemon Stats</title>
@@ -26,8 +27,32 @@
 
         <!-- Navigation -->
         <nav class="nav-container">
-            <div class="hamburger-menu" id="hamburger-menu">
+            <!-- Hamburger menu -->
+            <button class="btn btn-primary rounded-circle " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                 <i class="bi bi-list"></i>
+            </button>
+
+            <!-- Offcanvas Right -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <!-- Offcanvas header -->
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasRightLabel">Pokemon Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <!-- Offcanvas body -->
+                <div class="offcanvas-body">
+                    <ul>
+                        <li>
+                            Get ApiPokemon here: <a href="https://pokeapi.co/">PokeApi</a>
+                        </li>
+                        <li>
+                            This website was created by: <a href="https://www.instagram.com/criii1._?igsh=MXByNHZiZ3gzdjZoYQ==">criii1._</a>
+                        </li>
+                        <li>
+                            
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
@@ -48,5 +73,7 @@
 
     <!-- Script -->
     <script src="../js/Stats.js" defer></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
