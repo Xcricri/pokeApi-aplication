@@ -1,6 +1,6 @@
 {
     "routes": [
-        { "src": "/(favicon\\.ico|robots\\.txt|.*\\.(png|jpg|jpeg|gif|svg|webp|css|js|ico))", "dest": "public/$1" },
+        { "public": "/(.*))", "dest": "src/$1" },
         { "src": "/(.*)", "dest": "src/$1" }
     ]
 }
