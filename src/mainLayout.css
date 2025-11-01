@@ -4,15 +4,47 @@
 
 /* Desktop layout */
 @media only screen and (max-width: 1024px) {
-
+    body{
+        width: auto;
+    }
 }
 
 /* Tablet layout */
-@media screen and (max-width:768px){
+@media screen and (max-width: 768px) {
+    .search-container input[type="text"] {
+        width: 100%;
+        max-width: 250px;
+        padding: 10px;
+        font-size: 14px;
+    }
 
+    .pokemon-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
 }
 
 /* Mobile layout */
 @media screen and (max-width:480px) {
+    header .space {
+        width: 25%;
+    }
     
+    header .logo-container {
+        width: 50%;
+    }
+    
+    header .nav-container {
+        width: 25%;
+    }
+
+    .search-container input[type="text"] {
+        width: 100%;
+        max-width: 100%;
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .pokemon-container {
+        grid-template-columns: 1fr;
+    }
 }
