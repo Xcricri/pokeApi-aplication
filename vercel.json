@@ -1,6 +1,12 @@
 {
     "routes": [
-        { "public": "/(.*))", "dest": "src/$1" },
-        { "src": "/(.*)", "dest": "src/$1" }
+        {
+        "src": "/(.*\\.(?:png|jpg|jpeg|gif|svg|webp|ico|css|js|txt))",
+        "dest": "/$1"
+        },
+        {
+        "src": "/(.*)",
+        "dest": "src/$1"
+        }
     ]
 }
