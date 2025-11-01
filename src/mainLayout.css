@@ -24,15 +24,23 @@
 /* Mobile layout */
 @media screen and (max-width:480px) {
     header .space {
-        width: 25%;
+        width: 20%;
     }
     
     header .logo-container {
-        width: 50%;
+        width: 60%;
     }
     
     header .nav-container {
-        width: 25%;
+        width: 20%;
+    }
+
+    header .logo-container img{
+        max-width: 100%;
+    }
+
+    nav .btn-primary{
+        font-size: 16px;
     }
 
     .search-container input[type="text"] {
