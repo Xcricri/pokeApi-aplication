@@ -25,7 +25,7 @@ async function getPokemon(id) {
 // Fungsi menampilkan data pokemon
 document.addEventListener('DOMContentLoaded',() => {//Untuk merender data
     async function displayPokemon(){
-        for (let i = 1; i<= 5; i++){//Looping 100 card pokemon
+        for (let i = 1; i<= 500; i++){//Looping 100 card pokemon
             try{
                 const pokemon = await getPokemon(i);
                 const card = document.createElement('a');
