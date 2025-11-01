@@ -14,8 +14,6 @@
     .search-container input[type="text"] {
         width: 100%;
         max-width: 250px;
-        padding: 50px;
-        font-size: 14px;
     }
 
     .pokemon-container {
@@ -40,8 +38,6 @@
     .search-container input[type="text"] {
         width: 100%;
         max-width: 100%;
-        padding: 14px;
-        font-size: 12px;
     }
 
     .pokemon-container {
